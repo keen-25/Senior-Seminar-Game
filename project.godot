@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Topdown crashcourse"
+<<<<<<< HEAD
 run/main_scene="res://main_menu.tscn"
+=======
+run/main_scene="res://Levels/gamelevel.tscn"
+>>>>>>> a20b231a7d3b8b35f44f87d675b2d0d0ad2f6516
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,7 +23,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+<<<<<<< HEAD
 window/size/mode=3
+=======
+>>>>>>> a20b231a7d3b8b35f44f87d675b2d0d0ad2f6516
 window/stretch/mode="canvas_items"
 window/stretch/scale=4.0
 
