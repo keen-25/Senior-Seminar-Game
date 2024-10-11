@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfixcjnpqu81e"]
+
+[ext_resource type="Script" path="res://scenes/stick_collectible.gd" id="1_3xh2h"]
+[ext_resource type="Texture2D" uid="uid://by3jenae702p2" path="res://assets/brackeys_platformer_assets/sprites/stick-icon.png" id="1_xed75"]
+[ext_resource type="Resource" uid="uid://dg75lumy0bqj7" path="res://inventory/items/stick.tres" id="2_ct8o7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcqxs"]
+size = Vector2(6, 13)
+
+[node name="stick_collectible" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_3xh2h")
+item = ExtResource("2_ct8o7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xed75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wcqxs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
