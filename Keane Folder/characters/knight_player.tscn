@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwaut8t775sv6"]
+
+[ext_resource type="Script" path="res://scripts/knight_player_2.gd" id="1_cxr3u"]
+[ext_resource type="Texture2D" uid="uid://xxglrte1u1mq" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_ghpvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlt8q"]
+size = Vector2(11, 7.5)
+
+[sub_resource type="Animation" id="Animation_8p5os"]
+resource_name = "walkright"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qy0lx"]
+_data = {
+"walkright": SubResource("Animation_8p5os")
+}
+
+[node name="Knight-Player" type="CharacterBody2D"]
+script = ExtResource("1_cxr3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ghpvq")
+hframes = 8
+vframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 8.25)
+shape = SubResource("RectangleShape2D_mlt8q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qy0lx")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../AnimationPlayer")
