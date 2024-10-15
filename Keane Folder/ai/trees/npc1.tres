@@ -1,0 +1,104 @@
+[gd_resource type="BehaviorTree" load_steps=28 format=3 uid="uid://n4kvpk7lvfcw"]
+
+[ext_resource type="Script" path="res://ai/tasks/choose_random_pos.gd" id="1_0epkk"]
+[ext_resource type="Script" path="res://ai/tasks/move_to_position.gd" id="2_hm7s3"]
+[ext_resource type="Script" path="res://ai/tasks/find_target.gd" id="3_ohg4s"]
+[ext_resource type="Script" path="res://ai/tasks/move_to_target.gd" id="4_xbrds"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_31ksp"]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_da8wm"]
+text = "random move"
+
+[sub_resource type="BTAction" id="BTAction_rcjx4"]
+script = ExtResource("1_0epkk")
+range_min_in_dir = 40.0
+range_max_in_dir = 100.0
+position_var = &"pos"
+dir_var = &"dir"
+
+[sub_resource type="BTAction" id="BTAction_x20tr"]
+script = ExtResource("2_hm7s3")
+target_pos_var = &"pos"
+dir_var = &"dir"
+speed_var = 40
+tolerance = 10
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_n8xg4"]
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_jvd42"]
+custom_name = "Idle Sequence"
+children = [SubResource("BTRandomWait_n8xg4")]
+
+[sub_resource type="BTSequence" id="BTSequence_g5dxg"]
+custom_name = "Random Move Sequence"
+children = [SubResource("BTConsolePrint_da8wm"), SubResource("BTAction_rcjx4"), SubResource("BTAction_x20tr"), SubResource("BTSequence_jvd42")]
+
+[sub_resource type="BTProbability" id="BTProbability_6b85g"]
+children = [SubResource("BTSequence_g5dxg")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_4aks0"]
+text = "Move to Enemy"
+
+[sub_resource type="BTAction" id="BTAction_qgil5"]
+script = ExtResource("3_ohg4s")
+group = &"NPC"
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_06j5v"]
+script = ExtResource("4_xbrds")
+target_var = &"target"
+speed_var = 60
+tolerance = 30
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_bvtwa"]
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_t6dky"]
+custom_name = "Idle Sequence"
+children = [SubResource("BTRandomWait_bvtwa")]
+
+[sub_resource type="BTSequence" id="BTSequence_bgj84"]
+custom_name = "Move to Other NPC (enemy)"
+children = [SubResource("BTConsolePrint_4aks0"), SubResource("BTAction_qgil5"), SubResource("BTAction_06j5v"), SubResource("BTSequence_t6dky")]
+
+[sub_resource type="BTProbability" id="BTProbability_ronba"]
+run_chance = 0.3
+children = [SubResource("BTSequence_bgj84")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_rl1m2"]
+text = "Chase Player"
+
+[sub_resource type="BTAction" id="BTAction_vjtn6"]
+script = ExtResource("3_ohg4s")
+group = &"player"
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_wj1e3"]
+script = ExtResource("4_xbrds")
+target_var = &"target"
+speed_var = 100
+tolerance = 25
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_gr533"]
+max_duration = 4.0
+
+[sub_resource type="BTSequence" id="BTSequence_qvcv5"]
+custom_name = "Idle Sequence"
+children = [SubResource("BTRandomWait_gr533")]
+
+[sub_resource type="BTSequence" id="BTSequence_uubt3"]
+custom_name = "Move to Player"
+children = [SubResource("BTConsolePrint_rl1m2"), SubResource("BTAction_vjtn6"), SubResource("BTAction_wj1e3"), SubResource("BTSequence_qvcv5")]
+
+[sub_resource type="BTProbability" id="BTProbability_purlb"]
+run_chance = 0.063
+children = [SubResource("BTSequence_uubt3")]
+
+[sub_resource type="BTSelector" id="BTSelector_vbku3"]
+children = [SubResource("BTProbability_6b85g"), SubResource("BTProbability_ronba"), SubResource("BTProbability_purlb")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_31ksp")
+root_task = SubResource("BTSelector_vbku3")
