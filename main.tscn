@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://vom3mqq5t707"]
+
+[ext_resource type="PackedScene" uid="uid://bdvp7rs66ylys" path="res://Boys Bathroom.tscn" id="1_dfrbm"]
+[ext_resource type="PackedScene" uid="uid://bvpq8fdv4e1ji" path="res://Girls Bathroom.tscn" id="2_vlcxa"]
+
+[node name="Main" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_dfrbm")]
+
+[node name="TileMap2" parent="." instance=ExtResource("2_vlcxa")]
