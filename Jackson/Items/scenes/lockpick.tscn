@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://oew1f2ow84mn"]
+
+[ext_resource type="Script" path="res://scripts/lockpick.gd" id="1_elto4"]
+[ext_resource type="Texture2D" uid="uid://jg1ve3pya050" path="res://assets/Tools icon/Icon tools 23.png" id="2_gj0eb"]
+[ext_resource type="Resource" uid="uid://d1137rcp3ncr3" path="res://inventory/items/lockpick.tres" id="2_ho1on"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ng7i"]
+size = Vector2(16.5, 16.25)
+
+[node name="lockpick" type="Area2D"]
+script = ExtResource("1_elto4")
+item = ExtResource("2_ho1on")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gj0eb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.875)
+shape = SubResource("RectangleShape2D_5ng7i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
