@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqp6fjsrn1q2t"]
+
+[ext_resource type="Texture2D" uid="uid://c8xwep8bf816c" path="res://assets/Mini Interior Asset Pack Bed + Bath Exports by H0ndred - Itch/Objects/Desks + Small Tables + Cabinets/Tall Cabinet_At Front.png" id="1_fhsej"]
+[ext_resource type="Script" path="res://scenes/locker.gd" id="1_oye3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebh3u"]
+size = Vector2(23, 28)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_oye3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.77273, 1.44444)
+texture = ExtResource("1_fhsej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ebh3u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
