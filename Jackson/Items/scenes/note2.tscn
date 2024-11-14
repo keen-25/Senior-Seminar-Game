@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlmigc4wj5r0k"]
+
+[ext_resource type="Script" path="res://scripts/note2.gd" id="1_gqtjg"]
+[ext_resource type="Resource" uid="uid://ctbiips7u28b4" path="res://inventory/items/note2.tres" id="2_ewcfo"]
+[ext_resource type="Texture2D" uid="uid://d1fsd33als8v6" path="res://assets/Tools icon/book1.png" id="2_hss71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twybo"]
+size = Vector2(18, 19)
+
+[node name="Note2" type="Area2D"]
+script = ExtResource("1_gqtjg")
+item = ExtResource("2_ewcfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hss71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_twybo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
