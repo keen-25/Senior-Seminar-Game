@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfr51twlfyq6a"]
+
+[ext_resource type="Script" path="res://scenes/fake_glass.gd" id="1_mhkrs"]
+[ext_resource type="Texture2D" uid="uid://pvyqv5e0512m" path="res://icon.svg" id="1_t0ljo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mjab"]
+size = Vector2(23.75, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6btx"]
+size = Vector2(36, 36)
+
+[node name="fake_glass" type="Area2D"]
+script = ExtResource("1_mhkrs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("1_t0ljo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.125, 0)
+shape = SubResource("RectangleShape2D_8mjab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e6btx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
