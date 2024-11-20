@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwgaqg6bgk1tx"]
+
+[ext_resource type="Script" path="res://Jackson/Items/code/flashlight.gd" id="1_hj7ph"]
+[ext_resource type="Resource" uid="uid://brn55pbv3m3rq" path="res://Jackson/Items/code/flashlight.tres" id="2_6m3rq"]
+[ext_resource type="Texture2D" uid="uid://b17sb31rmp027" path="res://Jackson/Assets/Icon tools 65.png" id="2_ijne0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31xu6"]
+
+[node name="Flashlight" type="Area2D"]
+collision_layer = 7
+script = ExtResource("1_hj7ph")
+item = ExtResource("2_6m3rq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -4)
+texture = ExtResource("2_ijne0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_31xu6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

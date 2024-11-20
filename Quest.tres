@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c8qwehvpe1ndi"]
+
+[ext_resource type="Script" path="res://scripts/Quest.gd" id="1_oc82t"]
+
+[resource]
+resource_name = "Quest"
+script = ExtResource("1_oc82t")
+quest_id = ""
+npc_name = ""
+quest_state = ""
+dialog_state = 0
+quest_messages = []
+quest_responses = []

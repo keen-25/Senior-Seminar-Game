@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://us1k4awootyy"]
+
+[ext_resource type="Script" path="res://Jackson/Items/code/hammer.gd" id="1_nwmqa"]
+[ext_resource type="Texture2D" uid="uid://baq088frfpcwm" path="res://Jackson/Assets/Icon tools 5.png" id="1_qtxax"]
+[ext_resource type="Resource" uid="uid://1jgk3br4nvg6" path="res://Jackson/Items/code/hammer.tres" id="2_uondq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e252n"]
+size = Vector2(20, 20.75)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_nwmqa")
+item = ExtResource("2_uondq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8.75, -9)
+scale = Vector2(0.640625, 0.625)
+texture = ExtResource("1_qtxax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -8.625)
+shape = SubResource("RectangleShape2D_e252n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

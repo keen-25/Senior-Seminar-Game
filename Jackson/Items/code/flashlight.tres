@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://brn55pbv3m3rq"]
+
+[ext_resource type="Script" path="res://Jackson/inventory_item.gd" id="1_wq4yo"]
+[ext_resource type="Texture2D" uid="uid://b17sb31rmp027" path="res://Jackson/Assets/Icon tools 65.png" id="2_db7vn"]
+
+[resource]
+script = ExtResource("1_wq4yo")
+name = ""
+texture = ExtResource("2_db7vn")

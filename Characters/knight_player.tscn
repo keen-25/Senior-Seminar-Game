@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwaut8t775sv6"]
 
-[ext_resource type="Script" path="res://scripts/knight_player_2.gd" id="1_cxr3u"]
+[ext_resource type="Script" path="res://scripts/player_tom.gd" id="1_cxr3u"]
 [ext_resource type="Texture2D" uid="uid://xxglrte1u1mq" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_ghpvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlt8q"]
