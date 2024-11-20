@@ -30,6 +30,7 @@ func set_action_name() -> void:
 			label.text = "Unassigned"
 
 # Updates the button text to show the currently bound key
+
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
 	if action_events.size() > 0:
@@ -40,11 +41,42 @@ func set_text_for_key() -> void:
 	else:
 		button.text = "No key assigned"
 
+
+'''
+func set_text_for_key() -> void:
+	var action_events = InputMap.action_get_events(action_name)
+	var action_event = action_events[0]
+	var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
+	button.text = "%s" % action_keycode
+'''
+
+
+"""
 # Handles when the button is toggled to capture new input
 func _on_button_toggled(button_pressed) -> void:
 	if button_pressed:
 		button.text = "Press any key..."
 		set_process_unhandled_input(true)  # Start processing input for rebind
+
+		for i in get_tree().get_nodes_in_group("hotkeybutton"):
+			if i.action_name != self.action_name:
+				i.button.toggle_mode = false
+				i.set_process_unhandled_key_input(false)
+
+	else:
+		for i in get_tree().get_nodes_in_group("hotkeybutton"):
+			if i.action_name != self.action_name:
+				i.button.toggle_mode = true
+				i.set_process_unhandled_key_input(false)
+
+		set_text_for_key()
+"""
+
+
+func _on_button_toggled(button_pressed) -> void:
+	if button_pressed:
+		button.text = "Press any key..."
+		set_process_unhandled_key_input(button_pressed)  # Start processing input for rebind
 
 		for i in get_tree().get_nodes_in_group("hotkeybutton"):
 			if i.action_name != self.action_name:
@@ -88,6 +120,7 @@ func rebind_action_key(event):
 		set_action_name()
 '''
 
+"""
 func rebind_action_key(event):
 	var is_duplicate=false
 	var action_event=event
@@ -103,3 +136,12 @@ func rebind_action_key(event):
 		set_process_unhandled_key_input(false)
 		set_text_for_key()
 		set_action_name()
+"""
+
+func rebind_action_key(event) -> void:
+	InputMap.action_erase_events(action_name)
+	InputMap.action_add_event(action_name, event)
+	
+	set_process_unhandled_key_input(false)
+	set_text_for_key()
+	set_action_name()
