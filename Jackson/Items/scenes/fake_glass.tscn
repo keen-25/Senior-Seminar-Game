@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfr51twlfyq6a"]
 
-[ext_resource type="Script" path="res://scenes/fake_glass.gd" id="1_mhkrs"]
-[ext_resource type="Texture2D" uid="uid://pvyqv5e0512m" path="res://icon.svg" id="1_t0ljo"]
+[ext_resource type="Script" path="res://Jackson/Items/code/fake_glass.gd" id="1_mhkrs"]
+[ext_resource type="Texture2D" uid="uid://c7va12g1upmam" path="res://icon.svg" id="1_t0ljo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mjab"]
 size = Vector2(23.75, 24)

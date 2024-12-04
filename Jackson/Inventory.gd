@@ -43,7 +43,7 @@ func remove_at_index(index: int)->void:
 #you can choose which items can't be deleted based on name
 func use_item_at_index(index: int)-> void:
 	if index <0 || index >= slots.size() || !slots[index].item \
-	|| slots[index].item.name == "Hammer_collectible"\
+	|| slots[index].item.name == "hammer_collectible"\
 	|| slots[index].item.name == "Screwdriver_collectible"\
 	|| slots[index].item.name == "manuel_collectible"\
 	|| slots[index].item.name == "note_collectible"\

@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckktm4jpoq58i"]
+
+[ext_resource type="Script" path="res://Jackson/Items/scenes/npc_quest.gd" id="1_h7dta"]
+[ext_resource type="Texture2D" uid="uid://37t7raoy25sg" path="res://Jackson/Assets/sprites/inventory-slot.png" id="1_vfkte"]
+
+[node name="npc_quest" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_h7dta")
+
+[node name="quest1_ui" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 65.0
+texture = ExtResource("1_vfkte")
+
+[node name="name" type="RichTextLabel" parent="quest1_ui"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 109.0
+offset_bottom = 42.0
+scale = Vector2(0.6, 0.6)
+text = "Rose's Quest
+"
+
+[node name="text" type="RichTextLabel" parent="quest1_ui"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 221.0
+offset_bottom = 76.0
+scale = Vector2(0.7, 0.7)
+text = "Could you find me some food?
+"
+
+[node name="no_1" type="Button" parent="quest1_ui"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 36.0
+offset_right = 148.0
+offset_bottom = 67.0
+scale = Vector2(0.7, 0.7)
+text = "No
+"
+
+[node name="yes_1" type="Button" parent="quest1_ui"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 36.0
+offset_right = 109.0
+offset_bottom = 67.0
+scale = Vector2(0.7, 0.7)
+text = "Yes
+"
+
+[node name="no_quest" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 65.0
+texture = ExtResource("1_vfkte")
+
+[node name="name" type="RichTextLabel" parent="no_quest"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 109.0
+offset_bottom = 42.0
+scale = Vector2(0.6, 0.6)
+text = "Rose's Quest
+"
+
+[node name="text" type="RichTextLabel" parent="no_quest"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 221.0
+offset_bottom = 76.0
+scale = Vector2(0.7, 0.7)
+text = "No Current Quest!"
+
+[node name="complete" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 65.0
+texture = ExtResource("1_vfkte")
+
+[node name="name" type="RichTextLabel" parent="complete"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 109.0
+offset_bottom = 42.0
+scale = Vector2(0.6, 0.6)
+text = "Rose"
+
+[node name="text" type="RichTextLabel" parent="complete"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 17.0
+offset_right = 221.0
+offset_bottom = 76.0
+scale = Vector2(0.7, 0.7)
+text = "Thank you so much for the help. I really needed to eat"
+
+[connection signal="pressed" from="quest1_ui/no_1" to="." method="_on_no_1_pressed"]
+[connection signal="pressed" from="quest1_ui/yes_1" to="." method="_on_yes_1_pressed"]

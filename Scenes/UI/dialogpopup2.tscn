@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cygmsmbk15flc"]
-
-[ext_resource type="PackedScene" uid="uid://d15yqkc5rl7er" path="res://Scenes/UI/dialog_popup.tscn" id="2_y0gi4"]
-
-[node name="CanvasLayer" type="CanvasLayer"]
-visible = false
-
-[node name="DialogPopup" parent="." instance=ExtResource("2_y0gi4")]

@@ -2,7 +2,7 @@ extends Area2D
 
 
 
-@onready var inventory: Inventory = preload("res://inventory/playerinv.tres")
+@onready var inventory: Inventory = preload("/Users/keanealbright/topdown-crashcourse/Jackson/Scenes/playerinv.tres")
 
 var player_in_area=false
 
@@ -15,7 +15,7 @@ func _process(delta) -> void:
 			var index = Global.hotbar_instance.current_selected
 			if inventory.slots[index].item == null:
 				return
-			if inventory.slots[index].item.name == "Hammer_collectible":
+			if inventory.slots[index].item.name == "hammer_collectible":
 				queue_free()
 				
 				

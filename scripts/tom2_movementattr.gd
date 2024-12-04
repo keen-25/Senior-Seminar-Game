@@ -5,12 +5,19 @@ extends CharacterBody2D
 @export var move_speed : float = 100
 @export var starting_direction: Vector2 = Vector2(0,1)
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animated_sprite: Sprite2D = $Sprite2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 #@onready var stamina_amount = $UI/StaminaAmount
 @onready var staminabar: ColorRect = $UI/staminabar
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@export var interaction_distance: float = 50.0
-@onready var quest_manager = get_tree().get_root().get_node("QuestManager")
+#@export var interaction_distance: float = 50.0
+#@onready var quest_manager = get_tree().get_root().get_node("QuestManager")
+
+signal food_collected
+signal hammer_collected
+signal crowbar_collected
+
+var in_locker=false
 
 @export var inventory: Inventory
 
@@ -23,7 +30,7 @@ signal stamina_updated
 func _ready() -> void:
 	update_animation_parameters(starting_direction)
 	stamina_updated.connect(staminabar.update_stamina_ui)
-	Global.set_hotbar($Panel)
+	Global.set_hotbar($Hotbar)
 
 
 func _physics_process(delta: float) -> void:
@@ -54,6 +61,21 @@ func _physics_process(delta: float) -> void:
 		ray_cast_2d.target_position = input_direction.normalized() * 50
 	#move and slide function uses velocity of character body to move character on map
 	#move and collide uses velocity as well
+	if in_locker:
+		velocity=Vector2.ZERO
+		animated_sprite.visible=false
+		set_collision_layer_value(6,true)
+		set_collision_layer_value(1,false)
+		set_collision_layer_value(2,false)
+		set_collision_layer_value(2,false)
+		if Input.is_action_just_pressed("interact"):
+			animated_sprite.visible=true
+			set_collision_layer_value(6,false)
+			set_collision_layer_value(1,true)
+			set_collision_layer_value(2,true)
+			set_collision_layer_value(3,false)
+			in_locker=false
+			
 	move_and_collide(velocity)
 	#move_and_slide(velocity)
 		
@@ -78,6 +100,29 @@ func _process(delta):
 		stamina = updated_stamina
 		stamina_updated.emit(stamina, max_stamina)
 
+
+func collect(item):
+	inventory.insert(item)
+	print(item)
+	if str(item) == "<Resource#-9223371983553558893>": #"apple"
+		print("picked up food")
+		emit_signal("food_collected")
+	if str(item) == "<Resource>": #"note"
+		print("picked up food")
+		emit_signal("note_collected")
+	if str(item) == "<Resource#-9223371990918756800>": #"crowbar"
+		print("picked up crowbar")
+		emit_signal("crowbar_collected")
+	if str(item) == "<Resource#-9223371991774394823>": #"hammer"
+		print("picked up hammer")
+		emit_signal("hammer_collected")
+	
+func player():
+	pass
+	
+
+
+"""
 func _input(event):
 	if event.is_action_pressed("interact"):
 		print("action pressed")
@@ -90,12 +135,6 @@ func _input(event):
 				#return
 				# Talk to NPC
 				#todo: add dialog function to npc
-
-func collect(item):
-	inventory.insert(item)
-	
-func player():
-	pass
 
 func interact_with_npc():
 	var npc = get_nearest_npc()
@@ -116,3 +155,4 @@ func get_nearest_npc() -> Node:
 		print("found the NPC")
 		return npc_in_range[0]
 	return null
+"""

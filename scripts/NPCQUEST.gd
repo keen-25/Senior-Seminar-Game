@@ -19,12 +19,17 @@ var trial: Array = ["Y","N"]
 var dialog_state = 0
 
 func _ready() -> void:
+	pass
+	"""
 	dialog_popup.connect("response_selected", Callable(self, "_on_dialog_response"))
 	assigned_quest = quest_manager.get_quest_data(npc_name)
 	if not assigned_quest:
 		print("no quest assigned for NPC: %s" %npc_name)
 		push_error("QuestManager is not loaded.")
+"""
 
+
+"""
 # Start dialog by querying quest data
 func start_dialog():
 	print("we are here")
@@ -72,7 +77,7 @@ func _on_dialog_response(option: String):
 				assigned_quest.quest_state = "Started"
 				assigned_quest.dialog_state = 1
 	update_dialog()
-
+"""
 func _physics_process(_delta: float) -> void:
 	# Update velocity based on the current move direction
 	velocity = move_direction * move_speed

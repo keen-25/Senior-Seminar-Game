@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@onready var inventory: Inventory = preload("res://inventory/playerinv.tres")
+@onready var inventory: Inventory = preload("/Users/keanealbright/topdown-crashcourse/Jackson/Scenes/playerinv.tres")
 
 
 var player_in_area=false

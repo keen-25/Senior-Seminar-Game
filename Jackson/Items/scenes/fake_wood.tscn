@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://fw2v5gbhjab7"]
 
-[ext_resource type="Script" path="res://scripts/fake_wood.gd" id="1_fd746"]
-[ext_resource type="Texture2D" uid="uid://cvj0enpfhrc7s" path="res://assets/Wood/WoodAloneTiny/WoodDarkerTiny/WoodDarkerTiny_albedo.png" id="2_s8emb"]
+[ext_resource type="Script" path="res://Jackson/Items/code/fake_wood.gd" id="1_fd746"]
+[ext_resource type="Texture2D" uid="uid://dpkj4v4gu4j77" path="res://Jackson/Assets/WoodDarkerTiny_albedo.png" id="2_s8emb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfkxc"]
 size = Vector2(16, 16)

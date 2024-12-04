@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm067wrc84njf"]
+
+[ext_resource type="Script" path="res://win_screen.gd" id="1_v33l7"]
+
+[sub_resource type="SystemFont" id="SystemFont_2n3rl"]
+font_names = PackedStringArray("Impact", "", "", "", "", "", "", "", "", "")
+
+[sub_resource type="SystemFont" id="SystemFont_wqqns"]
+
+[node name="Win Screen" type="CanvasLayer"]
+script = ExtResource("1_v33l7")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -62.5
+offset_right = 40.5
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2n3rl")
+theme_override_font_sizes/font_size = 40
+text = "WINNER WINNER CHICKEN NIGGA"
+horizontal_alignment = 3
+
+[node name="back to main menu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_wqqns")
+text = "Main Menu"
+
+[node name="exit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+
+[connection signal="pressed" from="Panel/VBoxContainer/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/exit" to="." method="_on_exit_pressed"]
