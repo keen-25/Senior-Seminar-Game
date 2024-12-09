@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj62awqi72hft"]
+
+[ext_resource type="Texture2D" uid="uid://deqn70lx6r23n" path="res://Hiding Mechanic/pixel-art-suitcase-illustration-free-vector-1826083153.png" id="1_isesr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fprcw"]
+size = Vector2(20.625, 22.5)
+
+[node name="suitcase" type="Area2D"]
+position = Vector2(1, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -9.53674e-07)
+scale = Vector2(0.1, 0.0825)
+texture = ExtResource("1_isesr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fprcw")

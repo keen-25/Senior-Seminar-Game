@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://chkw6662nf53q"]
+
+[ext_resource type="Texture2D" uid="uid://b8hvrvbpxo8t3" path="res://Jackson/Assets/book1.png" id="1_d3gyg"]
+[ext_resource type="Script" path="res://scripts/note_3.gd" id="1_n2kgy"]
+[ext_resource type="Resource" uid="uid://7enn7yootus0" path="res://Items/note.tres" id="2_n77jg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1nbl"]
+
+[node name="Note3" type="Area2D"]
+script = ExtResource("1_n2kgy")
+item = ExtResource("2_n77jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d3gyg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o1nbl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

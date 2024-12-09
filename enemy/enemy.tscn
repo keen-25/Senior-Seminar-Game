@@ -229,8 +229,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6bkiu"]
-radius = 107.042
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btexk"]
+size = Vector2(16742.5, 13610.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0r1q"]
 radius = 7.0
@@ -254,7 +254,8 @@ frame_progress = 0.135884
 collision_layer = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
-shape = SubResource("CircleShape2D_6bkiu")
+position = Vector2(67, 11)
+shape = SubResource("RectangleShape2D_btexk")
 
 [node name="Killzone" parent="." instance=ExtResource("2_fq2p3")]
 collision_layer = 7
@@ -268,5 +269,9 @@ shape = SubResource("CapsuleShape2D_x0r1q")
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_1lnyo")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

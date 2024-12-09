@@ -1,17 +1,18 @@
-[gd_scene load_steps=38 format=3 uid="uid://bim33tmhe21eq"]
+[gd_scene load_steps=40 format=3 uid="uid://bim33tmhe21eq"]
 
 [ext_resource type="Script" path="res://scripts/tom2_movementattr.gd" id="1_mp2i4"]
 [ext_resource type="Texture2D" uid="uid://cuvs474bg703b" path="res://Assets/FREE Mana Seed Character Base Demo/char_a_p1/char_a_p1_0bas_humn_v01.png" id="1_uvmb0"]
 [ext_resource type="Resource" uid="uid://wcj1o6ska6f3" path="res://Jackson/Scenes/playerinv.tres" id="2_bmxrb"]
 [ext_resource type="Script" path="res://scripts/Stamina.gd" id="3_17cbt"]
 [ext_resource type="PackedScene" uid="uid://b7t6xd2jywprw" path="res://Jackson/Scenes/Hotbar.tscn" id="5_xwrck"]
+[ext_resource type="Texture2D" uid="uid://ny1cnkpp86bx" path="res://Jackson/Assets/32x32 textures (60).png" id="6_fng0q"]
+[ext_resource type="Script" path="res://Items/label.gd" id="7_0rxl6"]
 [ext_resource type="PackedScene" uid="uid://nhtejwfbepsn" path="res://Jackson/Scenes/inv_ui.tscn" id="7_cnjgb"]
+[ext_resource type="Script" path="res://Jackson/Items/code/point_light_2d.gd" id="7_qgqvj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhfvj"]
 radius = 5.0
 height = 24.0
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_v73j4"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g85ey"]
 animation = &"idle_down"
@@ -297,7 +298,11 @@ position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_nhfvj")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-texture = SubResource("CanvasTexture_v73j4")
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(4.15625, 3.4375)
+energy = 6.6
+texture = ExtResource("6_fng0q")
+script = ExtResource("7_qgqvj")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../CollisionShape2D")
@@ -317,6 +322,11 @@ collision_mask = 7
 collide_with_areas = true
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("7_0rxl6")
 
 [node name="staminabar" type="ColorRect" parent="UI"]
 anchors_preset = 2

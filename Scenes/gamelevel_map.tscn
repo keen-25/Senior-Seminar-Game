@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://emrjl2opx8u3" path="res://Game Stuff/Interiors_4.png" id="12_18j3l"]
 [ext_resource type="Texture2D" uid="uid://b6px6in8n0kgs" path="res://Game Stuff/Interiors_5.png" id="13_pr4bt"]
 [ext_resource type="Texture2D" uid="uid://7amfjpsh7h4s" path="res://Game Stuff/Interiors_6.png" id="14_cwub3"]
-[ext_resource type="PackedScene" uid="uid://bopx1qul17w6c" path="res://Scenes/new_npc.tscn" id="17_fpn0h"]
+[ext_resource type="PackedScene" uid="uid://bopx1qul17w6c" path="res://Scenes/Roger.tscn" id="17_fpn0h"]
 [ext_resource type="PackedScene" uid="uid://bfr51twlfyq6a" path="res://Jackson/Items/scenes/fake_glass.tscn" id="19_e7egu"]
 [ext_resource type="PackedScene" uid="uid://fw2v5gbhjab7" path="res://Jackson/Items/scenes/fake_wood.tscn" id="20_0n4or"]
 [ext_resource type="PackedScene" uid="uid://hslikhuwylrq" path="res://Jackson/Scenes/apple_collectible.tscn" id="22_d1u8v"]
@@ -17886,12 +17886,10 @@ move_speed = 500.0
 [node name="SpawnedNPC" type="Node2D" parent="."]
 
 [node name="Roger" parent="SpawnedNPC" instance=ExtResource("17_fpn0h")]
-position = Vector2(279, 1856)
-npc_name = "Roger"
+position = Vector2(1116, 1826)
 
 [node name="Rose" parent="SpawnedNPC" instance=ExtResource("17_fpn0h")]
-position = Vector2(549, 1886)
-npc_name = "Rose"
+position = Vector2(429, 2248)
 
 [node name="QuestItems" type="Node2D" parent="."]
 position = Vector2(180, 471)
@@ -17918,7 +17916,7 @@ script = ExtResource("23_a6kh0")
 position = Vector2(170, 1970)
 
 [node name="enemy" parent="Node" instance=ExtResource("23_awg6k")]
-position = Vector2(250, 2119)
+position = Vector2(1436, 2088)
 
 [node name="Menus" type="CanvasLayer" parent="."]
 
@@ -17926,6 +17924,6 @@ position = Vector2(250, 2119)
 game_manager = NodePath("../..")
 
 [node name="winzone" parent="." instance=ExtResource("27_0wa76")]
-position = Vector2(1130, 1982)
+position = Vector2(1279, 1214)
 
 [connection signal="food_collected" from="Player_Tom" to="SpawnedNPC/Roger" method="_on_player_tom_food_collected"]

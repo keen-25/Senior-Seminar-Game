@@ -47,9 +47,12 @@ func use_item_at_index(index: int)-> void:
 	|| slots[index].item.name == "Screwdriver_collectible"\
 	|| slots[index].item.name == "manuel_collectible"\
 	|| slots[index].item.name == "note_collectible"\
+	|| slots[index].item.name == "note2_collectible"\
+	|| slots[index].item.name == "note3_collectible"\
 	|| slots[index].item.name == "flashlight_collectible"\
 	|| slots[index].item.name == "wrench_collectible"\
 	|| slots[index].item.name == "apple_collectible"\
+	|| slots[index].item.name == "lockpick_collectible"\
 	|| slots[index].item.name == "crowbar_collectible": return
 	
 	var slot = slots[index]

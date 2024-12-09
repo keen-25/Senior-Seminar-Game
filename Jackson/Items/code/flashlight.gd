@@ -11,7 +11,7 @@ var player =null
 
 func _process(delta: float) -> void:
 	if player_in_area:
-		if Input.is_action_just_pressed("e")	:
+		if Input.is_action_just_pressed("interact")	:
 			player.collect(item)
 			queue_free()
 

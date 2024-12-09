@@ -2,7 +2,7 @@
 
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var move_speed : float = 200
 @export var starting_direction: Vector2 = Vector2(0,1)
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animated_sprite: Sprite2D = $Sprite2D
@@ -21,9 +21,9 @@ var in_locker=false
 
 @export var inventory: Inventory
 
-var stamina = 100
-var max_stamina = 150
-var regen_stamina = 10
+var stamina = 150
+var max_stamina = 200
+var regen_stamina = 5
 
 signal stamina_updated
 
@@ -44,11 +44,11 @@ func _physics_process(delta: float) -> void:
 	# Sprinting       		
 	if Input.is_action_pressed("sprint"):
 		if stamina >= 25:
-			move_speed = 150
+			move_speed = 300
 			stamina = stamina - 5
 			stamina_updated.emit(stamina, max_stamina)
 	elif Input.is_action_just_released("sprint"):
-		move_speed = 100
+		move_speed = 200
 	#print(input_direction)
 
 	
@@ -104,7 +104,7 @@ func _process(delta):
 func collect(item):
 	inventory.insert(item)
 	print(item)
-	if str(item) == "<Resource#-9223371983553558893>": #"apple"
+	if str(item) == "<Resource#-9223371992462260730>": #"apple"
 		print("picked up food")
 		emit_signal("food_collected")
 	if str(item) == "<Resource>": #"note"

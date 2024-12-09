@@ -31,6 +31,10 @@ func load_dialouge(npc_name):
 		var file = FileAccess.open("res://dialouge/rosedialouge.json", FileAccess.READ)
 		var content =JSON.parse_string(file.get_as_text())
 		return content
+	else:
+		var file = FileAccess.open("res://dialouge/nodia.json", FileAccess.READ)
+		var content =JSON.parse_string(file.get_as_text())
+		return content 
 		
 func _input(event):
 	if !d_active:

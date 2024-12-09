@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_wq4yo")
-name = ""
+name = "flashlight_collectible"
 texture = ExtResource("2_db7vn")

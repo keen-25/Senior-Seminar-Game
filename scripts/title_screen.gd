@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@export var start_level = preload("res://Scenes/gamelevel_map.tscn") as PackedScene
+@export var start_level = preload("res://Scenes/gamelevel_New.tscn") as PackedScene
 @export var Options = preload("res://Title_Screen/options_menu.tscn") as PackedScene
 @onready var start_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/start_button as Button
 @onready var settings_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings_button as Button
