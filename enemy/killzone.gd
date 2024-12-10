@@ -4,6 +4,10 @@ extends Area2D
 
 @onready var inventory: Inventory = preload("res://Jackson/Scenes/playerinv.tres")
 
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer" as AudioStreamPlayer
+
+
+
 signal killzone_triggered  # Signal to notify when the killzone is triggered
 
 func _ready():
@@ -16,10 +20,13 @@ func _on_body_entered(body: Node2D) -> void:
 		for i in range(0,12):
 			inventory.remove_at_index(i)
 			inventory.removeItemAtIndex(i)
+		audio_stream_player.play()
 		print("You died!")
 		emit_signal("killzone_triggered", body)  # Notify listeners
+		#audio_stream_player.play()
 		Engine.time_scale = 0.5  # Slow down time for dramatic effect
 		body.get_node("CollisionShape2D").queue_free()  # Remove player's collision
+		audio_stream_player.play()
 		get_tree().change_scene_to_file("res://Title_Screen/death_screen.tscn")
 		timer.start()  # Start the delay timer
 

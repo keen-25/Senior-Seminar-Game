@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://scripts/padlock.gd" id="1_v2ywo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqryg"]
-size = Vector2(28.4062, 31.3125)
+size = Vector2(62, 41.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6kmv"]
-size = Vector2(36, 38)
+size = Vector2(70.5, 46)
 
 [node name="Padlock" type="Area2D"]
 script = ExtResource("1_v2ywo")

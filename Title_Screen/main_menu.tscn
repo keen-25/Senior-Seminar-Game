@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv38t5whg55ee"]
+[gd_scene load_steps=7 format=3 uid="uid://dv38t5whg55ee"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_w4xhf"]
 [ext_resource type="Texture2D" uid="uid://bodf386de8rx6" path="res://Assets/free-futuristic-abstract-background-87pdm-1684981114.jpg" id="2_i3grm"]
 [ext_resource type="PackedScene" uid="uid://cf085neaei5xo" path="res://Title_Screen/options_menu.tscn" id="2_jubf3"]
+[ext_resource type="AudioStream" uid="uid://f2ur2m0fsqdj" path="res://Audio/Music/Horror Background Music For Films and Videos Free Download It s Not Safe Here YouTube.ogg" id="4_3osky"]
 
 [sub_resource type="SystemFont" id="SystemFont_timmd"]
 font_names = PackedStringArray("Impact")
@@ -98,3 +99,9 @@ text = "Exit"
 [node name="Options_Menu" parent="." instance=ExtResource("2_jubf3")]
 visible = false
 layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3osky")
+volume_db = 1.387
+autoplay = true
+bus = &"Music"

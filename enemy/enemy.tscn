@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://dmwmfqiduvloy"]
+[gd_scene load_steps=38 format=3 uid="uid://dmwmfqiduvloy"]
 
 [ext_resource type="Texture2D" uid="uid://cuvs474bg703b" path="res://Assets/FREE Mana Seed Character Base Demo/char_a_p1/char_a_p1_0bas_humn_v01.png" id="1_82vao"]
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_jlb0p"]
 [ext_resource type="PackedScene" uid="uid://dbw36lkl30evc" path="res://enemy/killzone.tscn" id="2_fq2p3"]
 [ext_resource type="Script" path="res://enemy/killzone.gd" id="4_h2nc8"]
+[ext_resource type="AudioStream" uid="uid://vqjm6s82aptv" path="res://Assets/brackeys_platformer_assets/sounds/hurt.wav" id="5_qqus4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwug2"]
 atlas = ExtResource("1_82vao")
@@ -245,7 +246,7 @@ script = ExtResource("1_jlb0p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 0.329412)
 sprite_frames = SubResource("SpriteFrames_fceev")
 animation = &"idle"
 frame_progress = 0.135884
@@ -271,6 +272,11 @@ shape = SubResource("CapsuleShape2D_1lnyo")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_qqus4")
+bus = &"Sfx"
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

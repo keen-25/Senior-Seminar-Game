@@ -1,6 +1,6 @@
 extends Node
 
-@onready var option_button = $HboxContainer/OptionButton as OptionButton
+@onready var option_button: OptionButton = $HBoxContainer/OptionButton
 
 const RESOLUTION_DICTIONARY : Dictionary = {
 	"1152 x 648" : Vector2i(1152, 648),

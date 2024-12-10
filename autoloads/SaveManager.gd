@@ -1,6 +1,6 @@
 extends Node
 
-const SETTINGS_SAVE_PATH : String = "user://SettingsDat.save"
+const SETTINGS_SAVE_PATH : String = "user://Settings.save"
 
 var settings_data_dict : Dictionary = {}
 

@@ -31,6 +31,22 @@ func load_dialouge(npc_name):
 		var file = FileAccess.open("res://dialouge/rosedialouge.json", FileAccess.READ)
 		var content =JSON.parse_string(file.get_as_text())
 		return content
+	elif npc_name == 'Kevin':
+		var file = FileAccess.open("res://dialouge/kevin.json", FileAccess.READ)
+		var content =JSON.parse_string(file.get_as_text())
+		return content
+	elif npc_name == 'Rick':
+		var file = FileAccess.open("res://dialouge/rick.json", FileAccess.READ)
+		var content =JSON.parse_string(file.get_as_text())
+		return content
+	elif npc_name == 'Help':
+		var file = FileAccess.open("res://dialouge/help.json", FileAccess.READ)
+		var content =JSON.parse_string(file.get_as_text())
+		return content
+	elif npc_name == 'John':
+		var file = FileAccess.open("res://dialouge/john.json", FileAccess.READ)
+		var content =JSON.parse_string(file.get_as_text())
+		return content
 	else:
 		var file = FileAccess.open("res://dialouge/nodia.json", FileAccess.READ)
 		var content =JSON.parse_string(file.get_as_text())

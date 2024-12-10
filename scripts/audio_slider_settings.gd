@@ -1,8 +1,10 @@
 extends Control
 
-@onready var audio_name_lbl = $HBoxContainer/Audio_Name_Lbl as Label
-@onready var audio_num_lbl = $HBoxContainer/Audio_Num_Lbl as Label
-@onready var h_slider = $HBoxContainer/HSlider as HSlider
+@onready var audio_num_lbl: Label = $HBoxContainer/Audio_Num_Lbl
+
+@onready var audio_name_lbl: Label = $HBoxContainer/Audio_Name_Lbl
+
+@onready var h_slider: HSlider = $HBoxContainer/HSlider
 
 @export_enum("Master", "Music", "Sfx") var bus_name : String
 
@@ -27,7 +29,7 @@ func load_data() -> void:
 			on_value_changed(SettingsDataContainer.get_sfx_volume())
 
 func set_name_label_text() -> void:
-	audio_name_lbl.text = str(bus_name) + "Volume"
+	audio_name_lbl.text = str(bus_name) + " Volume"
 
 func set_audio_num_label_text() -> void:
 	audio_num_lbl.text = str(h_slider.value * 100) + "%"

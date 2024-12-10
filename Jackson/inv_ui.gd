@@ -46,7 +46,7 @@ func update_slots():
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("use_item"):
+	if Input.is_action_just_pressed("inv_ui"):
 		if isOpen:
 			close()
 		else:

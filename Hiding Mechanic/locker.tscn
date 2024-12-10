@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Hiding Mechanic/locker.gd" id="1_oye3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebh3u"]
-size = Vector2(23, 28)
+size = Vector2(86, 28)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_oye3h")

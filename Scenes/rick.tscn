@@ -247,4 +247,3 @@ animations = [{
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_vp218")
 animation = &"walk_e"
-frame_progress = 0.0

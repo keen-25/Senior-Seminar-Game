@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://couhhscqkh0vm"]
 
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_lvsqo"]
-[ext_resource type="Texture2D" uid="uid://bfsi05b07jhxa" path="res://assets/Tools icon/Icon tools 12.png" id="2_rsaja"]
+[ext_resource type="Script" path="res://Jackson/inventory_item.gd" id="1_y4gbl"]
+[ext_resource type="Texture2D" uid="uid://b4rxt3qgd0tbp" path="res://Jackson/Assets/Icon tools 12.png" id="2_thxfj"]
 
 [resource]
-script = ExtResource("1_lvsqo")
-name = "Screwdriver_collectible"
-texture = ExtResource("2_rsaja")
+script = ExtResource("1_y4gbl")
+name = "screwdriver_collectible"
+texture = ExtResource("2_thxfj")

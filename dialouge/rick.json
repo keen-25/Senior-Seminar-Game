@@ -1,0 +1,13 @@
+[
+	{"name": "Rick", "text": "Hiiiiiii, my name is Rick! My mommy calls me Rickey...Whats your name?"},
+	{"name": "You", "text": "My is Tom, most people call me Tommy"},
+	{"name": "Rick", "text": "I dont really know where my Dad is...have you seen him?"},
+	{"name": "You", "text": "Whats your dads name bud?"},
+	{"name": "Rick", "text": "His name is Kevin"},
+	{"name": "You", "text": "I havent seen him but if I do i'll let him know where you are"},
+	{"name": "Rick", "text": "Thank you"},
+	{"name": "Rick", "text": "Hey mister?"},
+	{"name": "You", "text": "Whats up bud?"},
+	{"name": "Rick", "text": "When you see him tell him I was looking for my rook!"},
+	{"name": "You", "text": "I'll let him know bud"},
+]

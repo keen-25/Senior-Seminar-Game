@@ -273,10 +273,10 @@ shape = SubResource("CircleShape2D_tng1q")
 autostart = true
 
 [node name="Dialouge" parent="." instance=ExtResource("4_kxbth")]
-visible = false
+z_index = 2
 
 [node name="npc_quest" parent="." instance=ExtResource("5_mqd6m")]
-visible = false
+z_index = 2
 
 [connection signal="body_entered" from="chat_detection" to="." method="_on_chat_detection_body_entered"]
 [connection signal="body_exited" from="chat_detection" to="." method="_on_chat_detection_body_exited"]

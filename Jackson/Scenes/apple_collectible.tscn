@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://hhipev3xfv4a" path="res://Jackson/Items/code/apple.tres" id="2_k41fm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66086"]
-radius = 4.0
+radius = 23.0
 
 [node name="apple_collectible" type="Area2D"]
 collision_mask = 2

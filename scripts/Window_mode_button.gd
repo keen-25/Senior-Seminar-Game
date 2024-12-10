@@ -1,6 +1,6 @@
 extends Control
 
-@onready var option_button = $HboxContainer/OptionsButton as OptionButton
+@onready var option_button: OptionButton = $HBoxContainer/OptionButton
 
 
 const WINDOW_MODE_ARRAY : Array[String] = [

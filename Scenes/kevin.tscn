@@ -248,3 +248,9 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_yhwpd")
 animation = &"walk_w"
 frame_progress = 0.0
+
+[node name="Dialouge" parent="." index="4"]
+z_index = 2
+
+[node name="npc_quest" parent="." index="5"]
+z_index = 2

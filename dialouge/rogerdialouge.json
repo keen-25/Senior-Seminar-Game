@@ -1,9 +1,14 @@
 [
-	{"name": "Roger", "text": "Hello, my name is Roger!"},
-	{"name": "Roger", "text": "I'm late for my flight and I cant find my wife"},
+	{"name": "Roger", "text": "Hey, my name is Roger! Have you seen my Wife?"},
+	{"name": "Roger", "text": "I'm late for our flight and I can't find her"},
 	{"name": "Roger", "text": "Ohhh mannnn, I don't know where she is..."},
-	{"name": "You", "text": "Maybe she's in the bathroom? You should check there"},
+	{"name": "You", "text": " What's her name... Maybe I've seen her."},
 	{"name": "Roger", "text": "MY FLIGHT BOARDS IN 3 MINS"},
-	{"name": "You", "text": "Oh man. Hopefully she's on her way back. I hope you make it"},
+	{"name": "You", "text": "You still havent told me a name..."},
+	{"name": "Roger", "text": "Her name is Rose. She's blonde and is wearing pink"},
+	{"name": "You", "text": "If I see her ill let her know you were looking"},
+	{"name": "You", "text": "Have you checked the terminal you were supposed to be in yet?"},
+	{"name": "Roger", "text": "No, she said she'd meet me back here"},
 	{"name": "Roger", "text": "I guess were not going to Bora Bora this year..."},
+	{"name": "You", "text": "Good luck!"},
 ]
