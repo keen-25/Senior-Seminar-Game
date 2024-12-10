@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6ot6sv7k2hq"]
+
+[ext_resource type="Texture2D" uid="uid://ckkj8nl5ss2ay" path="res://Assets/Sprites:Screenshots/Screenshot 2024-12-03 at 2.06.58 PM.png" id="1_5ygh4"]
+[ext_resource type="Script" path="res://scripts/Item Code/metaldoor.gd" id="1_u3tov"]
+[ext_resource type="Script" path="res://scripts/Item Code/keypad.gd" id="3_n40o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7cdj"]
+size = Vector2(65, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gl5s"]
+size = Vector2(100, 99.625)
+
+[node name="Metal Door" type="Area2D"]
+script = ExtResource("1_u3tov")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.40404)
+texture = ExtResource("1_5ygh4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_f7cdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 8.1875)
+shape = SubResource("RectangleShape2D_7gl5s")
+
+[node name="Keypad" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -61.0
+offset_right = 27.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_n40o5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Keypad"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -16.0
+offset_right = 78.0
+offset_bottom = 147.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Keypad/VBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0.0946485, 0.0166032, 0.00128444, 1)
+
+[node name="Label" type="Label" parent="Keypad/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Code"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="GridContainer" type="GridContainer" parent="Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Button1" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+
+[node name="Button4" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "4"
+
+[node name="Button5" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+
+[node name="Button6" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "6"
+
+[node name="Button7" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+
+[node name="Button8" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+
+[node name="Button9" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+
+[node name="ButtonC" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "C"
+
+[node name="Button0" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+
+[node name="ButtonOK" type="Button" parent="Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "OK"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button1" to="Keypad" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button2" to="Keypad" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button3" to="Keypad" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button4" to="Keypad" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button5" to="Keypad" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button6" to="Keypad" method="_on_button_6_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button7" to="Keypad" method="_on_button_7_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button8" to="Keypad" method="_on_button_8_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button9" to="Keypad" method="_on_button_9_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/ButtonC" to="Keypad" method="_on_button_c_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/Button0" to="Keypad" method="_on_button_0_pressed"]
+[connection signal="pressed" from="Keypad/VBoxContainer/GridContainer/ButtonOK" to="Keypad" method="_on_button_ok_pressed"]

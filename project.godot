@@ -11,19 +11,17 @@ config_version=5
 [application]
 
 config/name="Topdown crashcourse"
-run/main_scene="res://Title_Screen/main_menu.tscn"
+run/main_scene="res://Screens/In-game Screens/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Jackson/Global/global.gd"
 QuestManager="res://scripts/QuestManager.gd"
-DialogPopup="res://Scenes/UI/dialog_popup.tscn"
-Dialogpopup2="res://Scenes/UI/dialogpopup2.tscn"
 SettingsSignalBus="*res://autoloads/SettingsSignalBus.gd"
 SettingsDataContainer="*res://autoloads/SettingsDataContainer.gd"
 Savemanager="*res://autoloads/SaveManager.gd"
+Global="*res://autoloads/global.gd"
 
 [display]
 

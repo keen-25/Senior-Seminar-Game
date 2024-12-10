@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b10yh6mv7fn6b"]
 
-[ext_resource type="Script" path="res://dialouge/new_dialouge.gd" id="1_fokps"]
-[ext_resource type="Texture2D" uid="uid://37t7raoy25sg" path="res://Jackson/Assets/sprites/inventory-slot.png" id="1_jr8sd"]
+[ext_resource type="Script" path="res://scripts/Dialouge Code:Quest/new_dialouge.gd" id="1_fokps"]
+[ext_resource type="Texture2D" uid="uid://bs6v3yqebd5c5" path="res://Assets/Items/inventory-slot.png" id="1_jr8sd"]
 
 [node name="Dialouge" type="Control"]
 layout_mode = 3

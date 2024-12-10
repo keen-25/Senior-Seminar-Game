@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dvee1nen0gaey"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory Code/inventory_item.gd" id="1_u82y5"]
+[ext_resource type="Texture2D" uid="uid://71rqg1tdfwe0" path="res://Assets/Items/Icon tools 28.png" id="2_qhsi6"]
+
+[resource]
+resource_name = "crowbar_collectible"
+script = ExtResource("1_u82y5")
+name = "crowbar_collectible"
+texture = ExtResource("2_qhsi6")

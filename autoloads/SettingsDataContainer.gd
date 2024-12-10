@@ -1,7 +1,7 @@
 extends Node
 
-@onready var DEFAULT_SETTINGS : DefualtSettingsResource = preload("res://Scenes/resources/settings/defaultsettings.tres")
-@onready var keybind_resource : PlayerKeybindResource=preload("res://Scenes/resources/settings/PlayerKeybindDefault.tres")
+@onready var DEFAULT_SETTINGS : DefualtSettingsResource = preload("res://settings/defaultsettings.tres")
+@onready var keybind_resource : PlayerKeybindResource=preload("res://settings/PlayerKeybindDefault.tres")
 
 var window_mode_index : int = 0
 var resolution_index : int = 0

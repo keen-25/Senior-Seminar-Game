@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://7enn7yootus0"]
-
-[ext_resource type="Script" path="res://Jackson/inventory_item.gd" id="1_04brs"]
-[ext_resource type="Texture2D" uid="uid://b8hvrvbpxo8t3" path="res://Jackson/Assets/book1.png" id="2_tsmdt"]
-
-[resource]
-script = ExtResource("1_04brs")
-name = "note_collectible"
-texture = ExtResource("2_tsmdt")

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="PlayerKeybindResource" load_steps=6 format=3 uid="uid://dnj7ng8aogi2d"]
+
+[ext_resource type="Script" path="res://settings/PlayerKeybindResource.gd" id="1_7jhna"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4x1k2"]
+device = -1
+keycode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id="InputEventKey_xotdi"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_fms8n"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id="InputEventKey_bti0l"]
+device = -1
+keycode = 87
+unicode = 119
+
+[resource]
+script = ExtResource("1_7jhna")
+DEFAULT_LEFT_KEY = SubResource("InputEventKey_xotdi")
+DEFAULT_RIGHT_KEY = SubResource("InputEventKey_fms8n")
+DEFAULT_UP_KEY = SubResource("InputEventKey_bti0l")
+DEFAULT_DOWN_KEY = SubResource("InputEventKey_4x1k2")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://vw8e7lrnm7bb"]
+
+[ext_resource type="Script" path="res://scripts/Item Code/manuel.gd" id="1_t1iob"]
+[ext_resource type="Resource" uid="uid://bin5js4k3ru5y" path="res://Items/item_tres/manuel.tres" id="2_8rslb"]
+[ext_resource type="Texture2D" uid="uid://bpimu4pgr7r6c" path="res://Assets/Items/book3.png" id="3_q6nq3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnreg"]
+size = Vector2(17, 18)
+
+[node name="Manuel" type="Area2D"]
+script = ExtResource("1_t1iob")
+item = ExtResource("2_8rslb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_q6nq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_cnreg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

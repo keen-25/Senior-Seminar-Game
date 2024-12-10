@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://hhipev3xfv4a"]
-
-[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_mti8u"]
-[ext_resource type="Texture2D" uid="uid://dorkj7g3h7k0m" path="res://assets/brackeys_platformer_assets/sprites/apple-icon.png" id="2_jprun"]
-
-[resource]
-script = ExtResource("1_mti8u")
-name = "apple"
-texture = ExtResource("2_jprun")

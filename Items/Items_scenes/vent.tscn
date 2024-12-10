@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvw4t334f3nwd"]
+
+[ext_resource type="Script" path="res://scripts/Item Code/vent.gd" id="1_42bty"]
+[ext_resource type="Texture2D" uid="uid://nfpi3moyo6nj" path="res://Assets/Sprites:Screenshots/Screenshot 2024-12-08 at 11.54.29 PM.png" id="2_8ohn6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvmbo"]
+size = Vector2(66, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp6ma"]
+size = Vector2(59, 29)
+
+[node name="vent" type="Area2D"]
+script = ExtResource("1_42bty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.156609, 0.160569)
+texture = ExtResource("2_8ohn6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_dvmbo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_fp6ma")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

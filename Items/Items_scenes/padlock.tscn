@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvvyhu78vt3qu"]
+
+[ext_resource type="Texture2D" uid="uid://5lxv7tyvwokx" path="res://Assets/Items/Small Square Padlock - BLACK - 0000.png" id="1_tl4ag"]
+[ext_resource type="Script" path="res://scripts/Item Code/padlock.gd" id="1_v2ywo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqryg"]
+size = Vector2(62, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6kmv"]
+size = Vector2(70.5, 46)
+
+[node name="Padlock" type="Area2D"]
+script = ExtResource("1_v2ywo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(0.732143, 0.625)
+texture = ExtResource("1_tl4ag")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_sqryg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e6kmv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
